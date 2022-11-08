@@ -23,6 +23,17 @@
   margin: 15px 0px 15px 0px;
   border-radius: 20px;
 }
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  width:350px;
+  height: 500px;
+  border: 2px solid rgb(202, 202, 202);
+  background: radial-gradient(circle at 18.7% 37.8%, rgb(178, 176, 176) 0%, rgb(211, 230, 239) 90%);
+  box-shadow: 1px 3px 0 rgb(0.25s,0.25s,0.2, 0.2);
+}
 .line{
   min-width: 1000px;
   margin-top: 0;
@@ -30,6 +41,11 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+.gradient2{
+  background: linear-gradient(to bottom, rgb(14, 242, 249), rgb(54, 141, 248));
+  height: 50px;
+  width: 100px;
 }
 .pozole{
   display: flex;
