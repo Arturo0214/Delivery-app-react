@@ -1,10 +1,8 @@
 import React from 'react'
 import myLogo from '../assets/images/myLogo.png'
-import {Routes, Route, Navigate, Link} from "react-router-dom";
 
-export default function Navbar() {
+export default function NavbarDashboard({signOut}) {
 
-  
   return (
     <nav className='navbar is-fixed-top has-shadow is-flex-touch is-justify-content-space-between' role="navigation" aria-label='main-navigation'>
           <div className="navbar-brand">
@@ -80,9 +78,12 @@ export default function Navbar() {
                 <div className="navbar-end">
                   <div className="navbar-item">
                     <div className="buttons">
-                    <Link className="button gradient is-rounded" to="/login">
-                        <strong>Inicia Sesión</strong>
-                    </Link>  
+                    <button 
+                    className="button gradient is-rounded"
+                    onClick={signOut} 
+                    >
+                    <strong>Cerrar Sesión</strong>
+                    </button>
                     </div>
                   </div>
                       <div className="buttons">
@@ -98,6 +99,6 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-        </nav>
+    </nav>
   )
 }

@@ -1,12 +1,8 @@
-import { useState, useEffect } from 'react'
-import {Routes, Route, Navigate, Link} from "react-router-dom";
-import Dashboard from './Dashboard';
 import 'bulma/css/bulma.min.css';
 import '../App.css'
 import email from '../assets/images/email.png'
 import Navbar from './Navbar';
 import Footer from './Footer';
-
 
 
 function Start() {

@@ -2,7 +2,6 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import 'bulma/css/bulma.min.css';
 import '../App.css'
-import myLogo from '../assets/images/myLogo.png'
 import email from '../assets/images/email.png'
 import {Routes, Route, Navigate, Link} from "react-router-dom";
 import Dashboard from './Dashboard';
@@ -34,7 +33,6 @@ export default function Login() {
     ) {
       console.log("login exitoso");
       setisUserActive(true);
-      <Link to='/dashboard'/>
 
     } else console.log("NO VAS A PASAR ");
   }
@@ -42,60 +40,64 @@ export default function Login() {
   
   return (
   <>
-    <>
-      <Navbar></Navbar>
-    </>
-    <div className='login'>
-      <div className="title">
-        Inicia Sesión
-      </div>
-      <div className="field">
-        <p className="control has-icons-left has-icons-right">
+    {isUserActive ? (
+      <Dashboard logout={() => setisUserActive(false)} />
+    ) : (
+      <>
+       <Navbar funcion={() => {return(1+2)}}></Navbar>
+      <>
+      <div className='login'>
+        <div className="title">
+          Inicia Sesión
+        </div>
+        <div className="field">
+          <p className="control has-icons-left has-icons-right">
+          <input 
+          className="input"
+          label='Email'
+          name='user' 
+          type="user"
+          variant="outlined"
+          placeholder="Email"
+          onChange={handleInputValue}
+          value={credentials.user || ""}/>
+              <span className="icon is-small is-left">
+                <img src={email}/>
+              </span>
+          <span className="icon is-small is-right">
+            <i className="fas fa-check"></i>
+          </span>
+          </p>
+       </div>
+       <div className="field">
+        <p className="control has-icons-left">
         <input 
-        className="input"
-        label='Email'
-        name='user' 
-        type="user" 
-        autoComplete='off' 
-        placeholder="Email"
+        className="input" 
+        type="password" 
+        name='password'
+        placeholder="Password"
         onChange={handleInputValue}
-        value={credentials.user || ""}/>
-            <span className="icon is-small is-left">
-              <img src={email}/>
-            </span>
-        <span className="icon is-small is-right">
-          <i className="fas fa-check"></i>
+        value={credentials.password || ""}
+        />
+        <span className="icon is-medium is-left">
+          <img src='https://cdn-icons-png.flaticon.com/512/6843/6843728.png'/>
         </span>
         </p>
-     </div>
-     <div className="field">
-      <p className="control has-icons-left">
-      <input 
-      className="input" 
-      type="password" 
-      name='password'
-      placeholder="Password"
-      onChange={handleInputValue}
-      value={credentials.password || ""}
-      />
-      <span className="icon is-medium is-left">
-        <img src='https://cdn-icons-png.flaticon.com/512/6843/6843728.png'/>
-      </span>
+       </div>
+        <div className="field">
+      <p className="control">
+        <button 
+        onClick={() => submitForm()}
+        className="button gradient2 is-rounded">
+         <strong>Login</strong>
+        </button>
       </p>
-     </div>
-      <div className="field">
-    <p className="control">
-      <button 
-      onClick={() => submitForm()}
-      className="button gradient2 is-rounded">
-       <strong>Login</strong>
-      </button>
-    </p>
-     </div>
-  </div>
-    <>
-    <Footer></Footer> 
-    </>
+       </div>
+      </div>
+        </>
+         <Footer></Footer> 
+      </>
+    )}
   </>
-  )
+  );
 }
