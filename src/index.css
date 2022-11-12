@@ -14,6 +14,37 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+.box{
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.3);
+  box-shadow: 1px 3px 0 rgb(0.25s,0.25s,0.2, 0.2);
+  scroll-snap-align: start;
+  min-width: 122px;
+}
+.box:hover{
+  background-color: #bff6ff;
+}
+.box img{
+  max-width: 80px;
+  width: auto;
+  height: 56px;
+  margin: 0 auto 5px;
+}
+.title{
+  display: inline-block;
+  background: white;
+  border-radius: 15px;
+  font-style: italic;
+  width: 450px;
+  height: 45px;
+  font-size: 33px;
+  background: -webkit-linear-gradient(rgb(14, 225, 232),rgb(13, 85, 174));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 .logo{
   display: flex;
   justify-content: center;
@@ -22,6 +53,9 @@
   height: 25px;
   margin: 15px 0px 15px 0px;
   border-radius: 20px;
+}
+.container{
+  right: 45px;
 }
 .login{
   display: flex;
@@ -36,8 +70,7 @@
 }
 .line{
   min-width: 1000px;
-  margin-top: 0;
-  height: 40px;
+  height: 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -67,6 +100,29 @@
   display: flex;
   flex-direction: row;
 }
+.card{
+  width: 100%;
+  border: 1px solid rgb(215, 213, 213);
+  border-radius: 20px;
+  box-shadow: 1px 3px 0 rgb(0.25s,0.25s,0.5, 0.5);
+  transition: .25s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.card:hover{
+  background: #f6f4f4;
+}
+.card figure img{
+  object-fit: cover;
+  border: 2px black;
+}
+.tag{
+  position: absolute;
+  right:10px;
+  top:10px;
+  font-weight: bold;
+}
+
 .barra-inferior{
   display: flex;
   flex-direction: row;
@@ -82,6 +138,7 @@
   background-color: white;
   z-index: 2;
 }
+
 .terms{
   display: flex;
   justify-content: center;

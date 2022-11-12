@@ -1,13 +1,15 @@
 import React from 'react'
 import myLogo from '../assets/images/myLogo.png'
 
-export default function NavbarDashboard({signOut}) {
+export default function NavbarDashboard({signOut, search}) {
+
+
 
   return (
     <nav className='navbar is-fixed-top has-shadow is-flex-touch is-justify-content-space-between' role="navigation" aria-label='main-navigation'>
           <div className="navbar-brand">
             <div id="navbarBasicExample" className="navbar-menu is-flex">
-            <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
+            <a role="button" className="navbar-burger" aria-label="menu" onClick={()=> {toggle()}} aria-expanded="false">
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
@@ -64,7 +66,14 @@ export default function NavbarDashboard({signOut}) {
               <div className="navbar-item">
                   <form className="field has-addons" id="busqueda">
                       <div className="control">
-                          <input id="inputBusqueda" autoComplete="off" className="input is-rounded has-background-light" type="text" placeholder="Busca tu Mandadito"/>
+                          <input 
+                          id="inputBusqueda" 
+                          onKeyUp={(e) => {search(e)}}
+                          autoComplete="off" 
+                          name='search'
+                          className="input is-rounded has-background-light" 
+                          type="search" 
+                          placeholder="Busca tu Mandadito"/>
                       </div>
                       <div className="control">
                           <button type="button" className="button is-rounded is-light">

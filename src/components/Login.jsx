@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import 'bulma/css/bulma.min.css';
 import '../App.css'
 import email from '../assets/images/email.png'
-import {Routes, Route, Navigate, Link} from "react-router-dom";
 import Dashboard from './Dashboard';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -47,8 +46,8 @@ export default function Login() {
        <Navbar funcion={() => {return(1+2)}}></Navbar>
       <>
       <div className='login'>
-        <div className="title">
-          Inicia Sesión
+        <div>
+          <h4><strong>Inicia Sesión</strong></h4>
         </div>
         <div className="field">
           <p className="control has-icons-left has-icons-right">

@@ -15,9 +15,9 @@ function Start() {
       <>
         <div className="line">
           <h1>
-          <p className="title mb-2 "><strong>Recibe $50 gratis en tu primer pedido</strong></p>
+          <p className="title mb-5 "><strong>Recibe $50 gratis en tu primer pedido</strong></p>
           </h1>
-          <div className="terms">
+          <div className="terms mb-5">
             <a>Términos y condiciones</a>
           </div>
         </div>
