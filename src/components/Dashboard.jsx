@@ -14,6 +14,8 @@ export default function Dashboard({logout}) {
 
   /**
    * The above function is an async function that fetches data from the API.
+   * Created a Fake API by using a Json-server and executed the command 
+   * npx json-server --watch db.json to fetch the data-base
    */
   const fetchApi = async () => {
     const BASE_URL = "http://localhost:3000/";
