@@ -17,7 +17,7 @@ export default function Filters({sorting, reviews, categories, all}) {
   return (
     <>
     <div id="home">
-        <section className="filter mt-0 pt-5 pb-0">
+        <section className="filter mt-0 pt-0 pb-5">
                 <div className="mt-5">
                     <div className="categories mgt-large is-flex is-justify-content-space-between">
                         <div className="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">

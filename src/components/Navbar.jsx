@@ -1,6 +1,8 @@
 import React from 'react'
 import myLogo from '../assets/images/myLogo.png'
 import {Routes, Route, Navigate, Link} from "react-router-dom";
+import ToggleBurger from './ToggleBurger';
+
 
 export default function Navbar() {
 
@@ -9,11 +11,7 @@ export default function Navbar() {
     <nav className='navbar is-fixed-top has-shadow is-flex-touch is-justify-content-space-between' role="navigation" aria-label='main-navigation'>
           <div className="navbar-brand">
             <div id="navbarBasicExample" className="navbar-menu is-flex">
-            <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </a>
+              <ToggleBurger/>
               <div className="navbar-start">
                 <div className='logo'>
                 <a><img src={myLogo}/></a>

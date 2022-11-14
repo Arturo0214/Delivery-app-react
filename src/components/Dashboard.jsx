@@ -10,7 +10,6 @@ import Filters from './Filters';
 export default function Dashboard({logout}) {
 
   const [restaurants, setRestaurants] = useState([])
-  const [resultadosInput, setResultadosInput] = useState('')
   const [filtersArray, setFiltersArray] = useState([])
 
   const fetchApi = async () => {
@@ -19,7 +18,6 @@ export default function Dashboard({logout}) {
       const results = await axios.get(`${BASE_URL}restaurants`);
       console.log("results", results.data);
       setFiltersArray(results.data);
-      setResultadosInput(results.data)
       setRestaurants(results.data);
     } catch (error) {
       console.log("error", error);
@@ -31,11 +29,9 @@ export default function Dashboard({logout}) {
   }, [restaurants]);
   
   useEffect(() => {
-
   fetchApi();
-
   }, [])
-   
+  
   const buscar = ({target: {value}}) => {
     const filter = filtersArray.filter((nombres) => {
       return nombres.name.toLowerCase().includes(value)
@@ -48,7 +44,7 @@ export default function Dashboard({logout}) {
     const sorting = clonArray.sort((a, b) => a.name > b.name ? 1 : b.name > a.name ? -1 : 0)
     setRestaurants(sorting);
   }
-  
+
   const calif = () => {
     const clonArray = [...restaurants]
     const sorting = clonArray.sort((a, b) => a.calificacion < b.calificacion ? 1 : b.calificacion < a.calificacion ? -1 : 0)
@@ -71,10 +67,10 @@ export default function Dashboard({logout}) {
         <NavbarDashboard search={(e) => buscar(e)} signOut={logout}/>
      </>
      <>
-        <Filters all={() => todos()} categories={(e) => type(e)} sorting={(e) => sortingRestaurants(e)} reviews={(e) => calif(e)} />
+        <Filters all={() => todos()} categories={(e) => type(e)} sorting={(e) => sortingRestaurants(e)} reviews={(e) => calif(e)}/>
      </>
     <>
-      <section className="section py-3">
+      <section className="section py-3 ">
         <div className="container">
           <h1 className="title mb-2 is-flex"><strong>¿Qué mandadito quieres hoy?</strong></h1>
           <strong><p className="mb-5 is-flex">Busca entre los diferentes locales y restaurantes lo que necesitas.</p></strong>

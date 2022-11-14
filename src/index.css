@@ -100,8 +100,45 @@
   display: flex;
   flex-direction: row;
 }
+/* toggle */
+.menu{
+  display: flex;
+  position: relative;
+  top: 357px;
+  left: 690px;
+  width: 100vw;
+  height: 780px;
+}
+.izquierda{
+  width: 300px;
+  background-color: white;
+  border-right: 1px solid rgb(189, 189, 189);
+}
+.derecha{
+  width: 1260px;
+  background-color: rgba(255, 255, 255, 0.127);
+}
+.logo2 img{
+  position: relative;
+  top: 30px;
+  width: 170px;
+  height: 43px;
+}
+.tache{
+  border: #1a1a1a56;
+  opacity: 0.5;
+  display: flex;
+  position: relative;
+  border-radius: 15px;
+  bottom: 50px;
+  left: 250px;
+  width: 26px;
+  height: 26px;
+}
+/* toggle */
 .card{
   width: 100%;
+  max-height: 350px;
   border: 1px solid rgb(215, 213, 213);
   border-radius: 20px;
   box-shadow: 1px 3px 0 rgb(0.25s,0.25s,0.5, 0.5);
@@ -115,6 +152,11 @@
 .card figure img{
   object-fit: cover;
   border: 2px black;
+}
+.icon{
+  position: relative;
+  top: 5px;
+  right: 5px;
 }
 .tag{
   position: absolute;
@@ -171,9 +213,9 @@
   display: flex;
   justify-content: center;
   top: 20px;
-  left: 10px;
+  left: 12px;
   align-items: center;
-  border-radius: 2px;
+  border-radius: 3px;
   border: 2px black;
   background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
   box-shadow: 1px 3px 0 rgb(0.25s,0.25s,0.2, 0.2);
@@ -184,6 +226,7 @@
   color: #babcbb;
 }
 .logo img{
+  z-index: 0;
   border-radius: 20px;
 }
 a {
@@ -206,8 +249,7 @@ body {
     background: linear-gradient(to bottom, rgb(14, 242, 249), rgb(54, 141, 248));
 }
 .gradient-gray{
-  background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
-  box-shadow: 1px 3px 0 rgb(0.25s,0.25s,0.2, 0.2);
+  background: linear-gradient(to bottom, rgb(216, 236, 237), rgb(153, 155, 157));
 }
 .gradient-green{
   display: flex;

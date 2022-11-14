@@ -42,7 +42,7 @@
     },
     {
       "id": "02",
-      "name": "Pollos Asados al Carbon, 'El Puente Alto'",
+      "name": "Pollos Asados al Carbon",
       "ubicacion": "Miguel Hidalgo, #125",
       "localtype": "restaurante",
       "menu": [
@@ -593,6 +593,66 @@
       "image": "https://www.consumoteca.com/wp-content/uploads/Cajero-autom%C3%A1tico-banco.png",
       "note": "A un solo click",
       "calificacion": 5
+    },
+    {
+      "id": "34",
+      "name": "Farmacia 'El Angel'",
+      "ubicacion": "Jose Maria Morelos Ote., #20",
+      "localtype": "farmacia",
+      "menu": [
+        {
+          "refresco": [
+            {
+              "coca-cola": "https://res.cloudinary.com/walmart-labs/image/upload/w_960,dpr_auto,f_auto,q_auto:best/gr/images/product-images/img_large/00000007500761L.jpg",
+              "sprite": "https://res.cloudinary.com/walmart-labs/image/upload/w_960,dpr_auto,f_auto,q_auto:best/gr/images/product-images/img_large/00750105536631L.jpg",
+              "fanta": "https://res.cloudinary.com/walmart-labs/image/upload/w_960,dpr_auto,f_auto,q_auto:best/gr/images/product-images/img_large/00750105530377L.jpg"
+            }
+          ]
+        }
+      ],
+      "image": "https://www.tevafarmacia.es/sites/default/files/styles/tv/public/tv-post-images/2018-10/distribucion_farmacia_merchandising.jpg?itok=sZ_71Fo3",
+      "note": "Una tienda de abarrotes dedicada a la excelencia",
+      "calificacion": 4.8
+    },
+    {
+      "id": "35",
+      "name": "Farmacias Similares",
+      "ubicacion": "Jose Maria Morelos Pte., #82",
+      "localtype": "farmacia",
+      "menu": [
+        {
+          "refresco": [
+            {
+              "coca-cola": "https://res.cloudinary.com/walmart-labs/image/upload/w_960,dpr_auto,f_auto,q_auto:best/gr/images/product-images/img_large/00000007500761L.jpg",
+              "sprite": "https://res.cloudinary.com/walmart-labs/image/upload/w_960,dpr_auto,f_auto,q_auto:best/gr/images/product-images/img_large/00750105536631L.jpg",
+              "fanta": "https://res.cloudinary.com/walmart-labs/image/upload/w_960,dpr_auto,f_auto,q_auto:best/gr/images/product-images/img_large/00750105530377L.jpg"
+            }
+          ]
+        }
+      ],
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRZrt2B0y68Q1u5JEZpioYsrNS53yBSRU8hw&usqp=CAU",
+      "note": "Farmacias Similares",
+      "calificacion": 4.9
+    },
+    {
+      "id": "36",
+      "name": "Farmacias Esperanza",
+      "ubicacion": "Miguel Hidalgo, #90",
+      "localtype": "farmacia",
+      "menu": [
+        {
+          "refresco": [
+            {
+              "coca-cola": "https://res.cloudinary.com/walmart-labs/image/upload/w_960,dpr_auto,f_auto,q_auto:best/gr/images/product-images/img_large/00000007500761L.jpg",
+              "sprite": "https://res.cloudinary.com/walmart-labs/image/upload/w_960,dpr_auto,f_auto,q_auto:best/gr/images/product-images/img_large/00750105536631L.jpg",
+              "fanta": "https://res.cloudinary.com/walmart-labs/image/upload/w_960,dpr_auto,f_auto,q_auto:best/gr/images/product-images/img_large/00750105530377L.jpg"
+            }
+          ]
+        }
+      ],
+      "image": "https://statics-diariomedico.uecdn.es/cms/styles/landscape_xl/azblob/sites/11/2018/09/farmacia_iluminacion.jpg.webp?itok=7zw1pfBZ",
+      "note": "Farmacias que se preocupan por ti ",
+      "calificacion": 4.3
     }
   ]
 }
