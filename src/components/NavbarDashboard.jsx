@@ -107,5 +107,6 @@ export default function NavbarDashboard({signOut, search}) {
             </div>
           </div>
     </nav>
+    
   )
 }

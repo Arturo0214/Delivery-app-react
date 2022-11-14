@@ -14,6 +14,8 @@ export default function Filters({sorting, reviews, categories, all}) {
 
 
 
+
+  
   return (
     <>
     <div id="home">
