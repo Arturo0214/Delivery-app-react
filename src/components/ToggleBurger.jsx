@@ -2,6 +2,10 @@ import React from 'react'
 import logoFinal from '../assets/images/logofinal.png'
 
 export default function ToggleBurger() {
+  /**
+   * When the burger icon is clicked, the burger icon will toggle the class 'is-active' and the
+   * dropdown menu will toggle the class 'is-hidden'
+   */
   const toggle = () => {
   let burgerIcon = document.querySelector("#burger");
   let dropMenu = document.querySelector("#menuBurger");

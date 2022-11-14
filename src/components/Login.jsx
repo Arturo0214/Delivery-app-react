@@ -21,10 +21,16 @@ export default function Login() {
   }, [credentials])
   
 
+  /**
+   * When the input value changes, set the credentials state to the current value of the input.
+   */
   const handleInputValue = ({target: {value, name}}) => {
     setcredentials({ ...credentials, [name]: value})
   }
 
+  /**
+   * It checks if the user and password are correct, if they are, it sets the isUserActive to true.
+   */
   const submitForm = async () => {
     if (
       credentials.user === USER_HARDCODED &&

@@ -14,14 +14,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-#burger{
-
-}
-@keyframes delay{
-
-  0%{left:0px; top:0px;}
-  100%{left:0px; top:0px;}
-}
 .box{
   padding: 10px;
   background: #fff;
