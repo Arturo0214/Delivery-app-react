@@ -12,6 +12,7 @@ export default function Dashboard({logout}) {
 
   const [restaurants, setRestaurants] = useState([])
   const [filtersArray, setFiltersArray] = useState([])
+  const [menuArray, setMenuArray] = useState([])
 
   /**
    * The above function is an async function that fetches data from the API.
@@ -34,7 +35,6 @@ export default function Dashboard({logout}) {
   const rAddress = document.querySelector("#ubicacion");
   const rImage = document.querySelector("#restaurant-image");
   const rReview = document.querySelector('#calificacion');
-  const rMenu = document.querySelector("#menu")
 
 
   useEffect(() => {
@@ -101,19 +101,14 @@ export default function Dashboard({logout}) {
     });
     return(filter[0]);
   };
-  
+
   const fillRestaurants = (restaurant) => {
     const {name, ubicacion, image, calificacion, menu} = restaurant;
     if(name) rName.innerText = name;
     if(ubicacion) rAddress.innerText = ubicacion;
     rReview.innerText = calificacion;
-    rImage.setAttribute("src", image);
-    rMenu.setAttribute('src', menu[0].map((element, i) => {
-      return <ul >
-
-      </ul>
-    }))
-    console.log(menu);
+    rImage.setAttribute("src", image)
+    setMenuArray(menu)
   };
 
   const showRestaurants = (id) => {
@@ -130,7 +125,6 @@ export default function Dashboard({logout}) {
     let restaurant = searchId(id);
     fillRestaurants(restaurant);
   };
-
 
   const closeRestaurants = () => {
     rName.innerText = "";
@@ -189,13 +183,15 @@ export default function Dashboard({logout}) {
             </div>
         </div>
         <div className='columns is-multiline' id='menu'>
-        
+          {menuArray.map((element, i ) => (
+            <Menu
+            filters={filtersArray}
+            products={element} key={i}
+            />
+          ))}
         </div>
-
       </section>
      </>
-
-
     <>
       <section className="section py-3" id='titulo'>
         <div className="container">
