@@ -6,6 +6,7 @@ import NavbarDashboard from './NavbarDashboard'
 import 'bulma/css/bulma.min.css';
 import Card from './Card';
 import Filters from './Filters';
+import Menu from './Menu';
 
 export default function Dashboard({logout}) {
 
@@ -28,6 +29,13 @@ export default function Dashboard({logout}) {
       console.log("error", error);
     }
   };
+  
+  const rName = document.querySelector("#name");
+  const rAddress = document.querySelector("#ubicacion");
+  const rImage = document.querySelector("#restaurant-image");
+  const rReview = document.querySelector('#calificacion');
+  const rMenu = document.querySelector("#menu")
+
 
   useEffect(() => {
     console.log("change state restaurants", restaurants);
@@ -37,7 +45,6 @@ export default function Dashboard({logout}) {
   useEffect(() => {
   fetchApi();
   }, [])
-  
   /**
    * The function buscar is a function that takes an object as an argument, and the object has a
    * property called target, which has a property called value. The function then filters the array
@@ -88,6 +95,56 @@ export default function Dashboard({logout}) {
     fetchApi();
   }
 
+  const searchId =  (aidi) => {
+    let filter = filtersArray.filter((restaurant) => {
+        return restaurant.id == aidi;
+    });
+    return(filter[0]);
+  };
+  
+  const fillRestaurants = (restaurant) => {
+    const {name, ubicacion, image, calificacion, menu} = restaurant;
+    if(name) rName.innerText = name;
+    if(ubicacion) rAddress.innerText = ubicacion;
+    rReview.innerText = calificacion;
+    rImage.setAttribute("src", image);
+    rMenu.setAttribute('src', menu[0].map((element, i) => {
+      return <ul >
+
+      </ul>
+    }))
+    console.log(menu);
+  };
+
+  const showRestaurants = (id) => {
+    rName.innerText = "";
+    rAddress.innerText = "";
+    let home = document.querySelector("#content");
+    let negocios = document.querySelector("#negocios");
+    let title = document.querySelector("#titulo");
+    let filter = document.querySelector('#filter');
+    filter.classList.add('is-hidden');
+    title.classList.add('is-hidden');
+    home.classList.add('is-hidden');
+    negocios.classList.toggle('is-hidden');
+    let restaurant = searchId(id);
+    fillRestaurants(restaurant);
+  };
+
+
+  const closeRestaurants = () => {
+    rName.innerText = "";
+    rAddress.innerText = "";
+    let home = document.querySelector("#content");
+    let negocios = document.querySelector("#negocios");
+    let title = document.querySelector("#titulo");
+    let filter = document.querySelector('#filter');
+    filter.classList.toggle('is-hidden');
+    title.classList.toggle('is-hidden');
+    home.classList.toggle('is-hidden');
+    negocios.classList.add('is-hidden');
+  }
+
   return (
     <>
      <>
@@ -96,14 +153,51 @@ export default function Dashboard({logout}) {
         signOut={logout}/>
      </>
      <>
-        <Filters 
+        <div id='filter'>
+        <Filters
         all={() => todos()} 
         categories={(e) => type(e)} 
         sorting={(e) => sortingRestaurants(e)} 
         reviews={(e) => calif(e)}/>
+        </div>
      </>
+     <>
+     <section className="negocios is-hidden" id="negocios">
+     <div className="atras">
+        <button className="button gradient-gray is-rounded" onClick={() => closeRestaurants()}>Atrás</button>
+     </div>
+          <div className="card-image">
+            <figure className="imagen">
+                <img src="" id="restaurant-image"/>
+            </figure>
+        </div>
+        <div className="card-content">
+            <span className="tag is-danger" id="local-type"></span>
+            <div className="is-flex is-justify-content-space-between is-align-items-center">
+                <div className="content mb-0">
+                    <p className="has-text-weight-semibold mb-0 is-size-4 is-uppercase is-size-4 is-uppercase" id="name"></p>
+                    <p className="mb-0 is-size-7" id="ubicacion"></p>
+                </div>
+                <div className="ranking has-text-right">
+                    <span className="icon-text">
+                        <span  className="icon has-text-info">
+                        <i className="mdi mdi-star mdi-18px is-active"></i>
+                        </span> 
+                        <span id="calificacion"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div className='columns is-multiline' id='menu'>
+        
+        </div>
+
+      </section>
+     </>
+
+
     <>
-      <section className="section py-3 ">
+      <section className="section py-3" id='titulo'>
         <div className="container">
           <h1 className="title mb-2 is-flex"><strong>¿Qué mandadito quieres hoy?</strong></h1>
           <strong><p className="mb-5 is-flex">Busca entre los diferentes locales y restaurantes lo que necesitas.</p></strong>
@@ -111,12 +205,15 @@ export default function Dashboard({logout}) {
       </section>
     </>
     <>
-      <div className='columns is-multiline'>
+      <>
+      <div className='columns is-multiline' id='content'>
       {restaurants.map((element, i)=>(
         <Card
+        showInfo={showRestaurants}
         cardInfo={element} key={i}/>
       ))}
       </div>
+      </>
     </>   
     <>
       <Footer/>

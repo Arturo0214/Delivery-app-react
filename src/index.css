@@ -14,6 +14,16 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+.negocios{
+  display: flex;
+  flex-direction: column;
+}
+.imagen img{
+  width: 430px;
+  height: 260px;
+  border-radius: 20px;
+}
+  
 .box{
   padding: 10px;
   background: #fff;

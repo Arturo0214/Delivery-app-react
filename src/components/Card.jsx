@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'bulma/css/bulma.min.css';
 import '../index.css';
 
-export default function Card({cardInfo}) {
+export default function Card({cardInfo, showInfo}) {
 
-  
+
+
   return (
     <>
-    
     <div className="column is-4-desktop is-6-tablet">
-      <div className="card p-0">
+      <div className="card p-0" onClick={() => showInfo(cardInfo.id)}>
         <div className="card-image">
           <figure className="image is-16by9">
             <img src={cardInfo.image} alt="Placeholder image"/>
